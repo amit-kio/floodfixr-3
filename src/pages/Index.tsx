@@ -1,10 +1,12 @@
+import { Header } from "@/components/Header";
 import { HeroSection } from "@/components/HeroSection";
-import { TrustSection } from "@/components/TrustSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { ProcessSection } from "@/components/ProcessSection";
-import { UrgencySection } from "@/components/UrgencySection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { EmergencyServicesSection } from "@/components/EmergencyServicesSection";
+import { SupportingBullets } from "@/components/SupportingBullets";
+import { LocationsStrip } from "@/components/LocationsStrip";
+import { LeadCaptureSection } from "@/components/LeadCaptureSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { EquipmentSection } from "@/components/EquipmentSection";
+import { ServicesByLocation } from "@/components/ServicesByLocation";
+import { FAQSection } from "@/components/FAQSection";
 import { FinalCTASection } from "@/components/FinalCTASection";
 import { StickyCallButton } from "@/components/StickyCallButton";
 import { Footer } from "@/components/Footer";
@@ -12,13 +14,15 @@ import { Footer } from "@/components/Footer";
 const Index = () => {
   return (
     <main className="min-h-screen">
+      <Header />
       <HeroSection />
-      <TrustSection />
-      <ServicesSection />
-      <ProcessSection />
-      <UrgencySection />
-      <TestimonialsSection />
-      <EmergencyServicesSection />
+      <SupportingBullets />
+      <LocationsStrip />
+      <LeadCaptureSection />
+      <HowItWorksSection />
+      <EquipmentSection />
+      <ServicesByLocation />
+      <FAQSection />
       <FinalCTASection />
       <Footer />
       <StickyCallButton />

@@ -1,79 +1,67 @@
-import { Phone, Clock, MapPin, Shield, Droplets } from "lucide-react";
-import { CallButton } from "./CallButton";
+import { Phone, Zap, CheckCircle } from "lucide-react";
+import { CallButton, CONTACT } from "./CallButton";
+
+const benefits = [
+  "On-call remediation experts",
+  "Step by step DIY guidance",
+  "Professional drying equipment",
+  "Insurance-ready documentation",
+];
 
 export const HeroSection = () => {
   return (
-    <section className="relative min-h-[90vh] gradient-hero overflow-hidden">
+    <section className="relative py-16 lg:py-24 gradient-hero overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-10 w-64 h-64 rounded-full bg-water/30 blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full bg-water/20 blur-3xl" />
       </div>
       
-      <div className="container relative z-10 py-12 lg:py-20">
-        {/* Top bar with quick info */}
-        <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8 mb-8 text-white/90 text-sm">
-          <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4" />
-            <span>24/7 Emergency Response</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <MapPin className="w-4 h-4" />
-            <span>Local • Certified • Fast</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Shield className="w-4 h-4" />
-            <span>Insurance-Approved</span>
-          </div>
-        </div>
-
-        {/* Main hero content */}
-        <div className="text-center max-w-4xl mx-auto">
+      <div className="container relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
           {/* Urgent badge */}
           <div className="inline-flex items-center gap-2 bg-emergency/20 border border-emergency/40 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Droplets className="w-5 h-5 text-emergency" />
-            <span className="text-emergency font-semibold">Water Damage Gets Worse Every Hour</span>
+            <Zap className="w-5 h-5 text-emergency" />
+            <span className="text-emergency font-semibold">24/7 emergency response available</span>
           </div>
 
           {/* Main headline */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight animate-slide-up">
-            Emergency Water Damage Restoration
-            <span className="block text-water mt-2">Get Help, Right Now</span>
+            Expert step by step guidance for water damage recovery
           </h1>
 
           {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            Leaks, floods, burst pipes, sewage — we handle it all.
-            <br className="hidden md:block" />
-            <strong className="text-white">30-minute arrival • Free assessment</strong>
+          <p className="text-xl md:text-2xl text-white/80 mb-4 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            Get professional support, commercial-grade drying equipment, and 24/7 help to stop damage and dry safely.
           </p>
 
-          {/* Primary CTA */}
-          <div className="flex flex-col items-center gap-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <CallButton size="xxl" />
-            
-            <div className="flex items-center gap-2 text-white/70 text-sm">
-              <Phone className="w-4 h-4" />
-              <span>Immediate dispatch available</span>
-            </div>
-          </div>
+          <p className="text-lg text-white/70 mb-8 max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <strong className="text-white">You handle the safe work.</strong>
+            <br />
+            Our experts guide you through every step so nothing is missed and damage doesn't get worse.
+          </p>
 
-          {/* Trust indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            {[
-              { label: "IICRC Certified", icon: "✓" },
-              { label: "BBB A+ Rated", icon: "⭐" },
-              { label: "5-Star Reviews", icon: "★" },
-              { label: "Licensed & Insured", icon: "🛡️" },
-            ].map((item, i) => (
-              <div 
-                key={i}
-                className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20"
-              >
-                <div className="text-2xl mb-1">{item.icon}</div>
-                <div className="text-white/90 text-sm font-medium">{item.label}</div>
+          {/* Benefits grid */}
+          <div className="grid grid-cols-2 gap-3 max-w-xl mx-auto mb-10 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            {benefits.map((benefit, index) => (
+              <div key={index} className="flex items-center gap-2 text-white/90 text-left">
+                <CheckCircle className="w-5 h-5 text-trust flex-shrink-0" />
+                <span className="text-sm md:text-base">{benefit}</span>
               </div>
             ))}
+          </div>
+
+          {/* Primary CTA */}
+          <div className="flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: '0.5s' }}>
+            <CallButton size="xxl" />
+            
+            <a 
+              href={CONTACT.phoneHref}
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Call Now: {CONTACT.phone}</span>
+            </a>
           </div>
         </div>
       </div>

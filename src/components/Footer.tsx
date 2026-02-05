@@ -1,4 +1,5 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
+import { CONTACT } from "./CallButton";
 
 export const Footer = () => {
   return (
@@ -7,50 +8,52 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Company info */}
           <div>
-            <h3 className="text-xl font-bold text-white mb-4">MD Water Restoration</h3>
-            <p className="text-white/70 mb-4">
-              24/7 emergency water damage restoration services. Licensed, bonded, and insured.
+            <h3 className="text-xl font-bold text-white mb-4">FloodFixr</h3>
+            <p className="text-white/70">
+              Reliable water damage guidance, equipment, and expert support.
             </p>
-            <div className="flex items-center gap-2 text-white/80">
-              <MapPin className="w-4 h-4" />
-              <span>Serving Maryland & Surrounding Areas</span>
-            </div>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Contact Us</h3>
+            <h3 className="text-lg font-bold text-white mb-4">Contact</h3>
             <div className="space-y-3">
               <a 
-                href="tel:+12402216177"
+                href={`mailto:${CONTACT.email}`}
+                className="flex items-center gap-2 text-white/80 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4" />
+                {CONTACT.email}
+              </a>
+              <a 
+                href={CONTACT.phoneHref}
                 className="flex items-center gap-2 text-emergency hover:text-emergency/80 transition-colors font-semibold"
               >
                 <Phone className="w-5 h-5" />
-                (240) 221-6177
+                {CONTACT.phone}
               </a>
-              <div className="flex items-center gap-2 text-white/80">
-                <Mail className="w-4 h-4" />
-                <span>Available 24/7</span>
-              </div>
             </div>
           </div>
 
-          {/* Certifications */}
+          {/* Legal */}
           <div>
-            <h3 className="text-lg font-bold text-white mb-4">Certifications</h3>
-            <ul className="space-y-2 text-white/80">
-              <li>✓ IICRC Certified</li>
-              <li>✓ BBB A+ Rated</li>
-              <li>✓ Licensed & Insured</li>
-              <li>✓ EPA-Approved Products</li>
-            </ul>
+            <h3 className="text-lg font-bold text-white mb-4">Legal</h3>
+            <div className="space-y-2 text-white/70">
+              <a href="#" className="block hover:text-white transition-colors">Privacy Policy</a>
+              <a href="#" className="block hover:text-white transition-colors">Terms and Conditions</a>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-white/20 pt-8 text-center">
-          <p className="text-white/60 text-sm">
-            © {new Date().getFullYear()} MD Water Restoration. All rights reserved.
-          </p>
+        <div className="border-t border-white/20 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+            <p className="text-white/60 text-sm">
+              Copyright © {new Date().getFullYear()} FloodFixr, a service of Newpoint LLC. All rights reserved.
+            </p>
+            <p className="text-white/40 text-sm">
+              Powered by KiLLitOnLine
+            </p>
+          </div>
         </div>
       </div>
     </footer>
