@@ -33,7 +33,5 @@ export const LeadCaptureSection = () => {
       [name]: type === "checkbox" ? checked : value
     }));
   };
-  return <section id="contact" className="py-16 bg-secondary/50">
-      
-    </section>;
+  return;
 };
