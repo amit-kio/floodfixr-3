@@ -1,5 +1,11 @@
-import { AlertTriangle, Clock, FileCheck } from "lucide-react";
-import { CallButton } from "./CallButton";
+import { AlertTriangle, CheckCircle, Phone } from "lucide-react";
+import { CallButton, CONTACT } from "./CallButton";
+
+const benefits = [
+  "Expert guidance at every step",
+  "Professional equipment",
+  "24/7 support when conditions change",
+];
 
 export const FinalCTASection = () => {
   return (
@@ -18,34 +24,37 @@ export const FinalCTASection = () => {
           </div>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white mb-6">
-            ⚠ Don't Wait.
-            <span className="block">Water Damage Spreads Fast.</span>
+            Water damage spreads fast if handled incorrectly
           </h2>
 
           <p className="text-xl text-white/80 mb-8">
-            The longer water sits, the worse the damage becomes.
-            <br />
-            <strong className="text-white">The good news? Help is one call away.</strong>
+            Delays or mistakes can lead to mold, structural damage, and higher repair costs.
           </p>
 
           {/* Benefits */}
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
-            <div className="flex items-center gap-2 text-white/90">
-              <Clock className="w-5 h-5 text-emergency" />
-              <span>30-minute arrival</span>
-            </div>
-            <div className="flex items-center gap-2 text-white/90">
-              <FileCheck className="w-5 h-5 text-trust" />
-              <span>Free damage assessment</span>
-            </div>
-            <div className="flex items-center gap-2 text-white/90">
-              <FileCheck className="w-5 h-5 text-trust" />
-              <span>Insurance-friendly</span>
+          <div className="mb-10">
+            <p className="text-white font-semibold mb-4">With FloodFixr, you get:</p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {benefits.map((benefit, index) => (
+                <div key={index} className="flex items-center gap-2 text-white/90">
+                  <CheckCircle className="w-5 h-5 text-trust" />
+                  <span>{benefit}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* Main CTA */}
-          <CallButton size="xxl" />
+          <div className="flex flex-col items-center gap-4">
+            <CallButton size="xxl" label="Call Emergency Line Now" />
+            <a 
+              href={CONTACT.phoneHref}
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-lg"
+            >
+              <Phone className="w-5 h-5" />
+              <span>{CONTACT.phone}</span>
+            </a>
+          </div>
         </div>
       </div>
     </section>

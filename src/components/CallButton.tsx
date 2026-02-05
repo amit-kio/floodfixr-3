@@ -5,12 +5,13 @@ interface CallButtonProps {
   size?: "default" | "lg" | "xl" | "xxl";
   showIcon?: boolean;
   className?: string;
+  label?: string;
 }
 
-const PHONE_NUMBER = "(240) 221-6177";
-const PHONE_HREF = "tel:+12402216177";
+const PHONE_NUMBER = "(650) 250-0690";
+const PHONE_HREF = "tel:+16502500690";
 
-export const CallButton = ({ size = "xl", showIcon = true, className = "" }: CallButtonProps) => {
+export const CallButton = ({ size = "xl", showIcon = true, className = "", label = "Call Emergency Line" }: CallButtonProps) => {
   return (
     <Button
       variant="emergency"
@@ -20,7 +21,7 @@ export const CallButton = ({ size = "xl", showIcon = true, className = "" }: Cal
     >
       <a href={PHONE_HREF}>
         {showIcon && <Phone className="mr-1" />}
-        Call Now: {PHONE_NUMBER}
+        {label}
       </a>
     </Button>
   );
@@ -35,4 +36,10 @@ export const PhoneDisplay = ({ className = "" }: { className?: string }) => {
       {PHONE_NUMBER}
     </a>
   );
+};
+
+export const CONTACT = {
+  phone: PHONE_NUMBER,
+  phoneHref: PHONE_HREF,
+  email: "info@floodfixr.com",
 };
