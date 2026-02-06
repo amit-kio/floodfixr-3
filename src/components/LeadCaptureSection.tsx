@@ -33,5 +33,5 @@ export const LeadCaptureSection = () => {
       [name]: type === "checkbox" ? checked : value
     }));
   };
-  return;
+  return null;
 };
