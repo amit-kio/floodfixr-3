@@ -1,5 +1,6 @@
 import { Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import floodfixrLogo from "@/assets/floodfixr-logo.png";
 
 const PHONE_NUMBER = "(650) 250-0690";
 const PHONE_HREF = "tel:+16502500690";
@@ -12,7 +13,7 @@ export const Header = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-extrabold text-white">FloodFixr</span>
+            <img src={floodfixrLogo} alt="FloodFixr" className="h-10 md:h-12" />
           </div>
 
           {/* Contact Info */}
