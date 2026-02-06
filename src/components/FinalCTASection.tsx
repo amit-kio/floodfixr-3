@@ -46,10 +46,10 @@ export const FinalCTASection = () => {
 
           {/* Main CTA */}
           <div className="flex flex-col items-center gap-4">
-            <CallButton size="xxl" label="Call Emergency Line Now" />
+            <CallButton size="xl" label="Call Emergency Line Now" className="max-w-[300px] w-full text-base md:text-lg" />
             <a 
               href={CONTACT.phoneHref}
-              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-lg"
+              className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-base md:text-lg"
             >
               <Phone className="w-5 h-5" />
               <span>{CONTACT.phone}</span>
