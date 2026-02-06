@@ -8,7 +8,7 @@ const EMAIL = "info@floodfixr.com";
 
 export const Header = () => {
   return (
-    <header className="bg-primary py-4 sticky top-0 z-50">
+    <header className="bg-white py-4 sticky top-0 z-50 border-b border-border shadow-sm">
       <div className="container">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           {/* Logo */}
@@ -17,18 +17,18 @@ export const Header = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-white/90">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-muted-foreground">
             <span className="hidden md:inline">24/7 emergency response</span>
             <a 
               href={PHONE_HREF}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
               <Phone className="w-4 h-4" />
               {PHONE_NUMBER}
             </a>
             <a 
               href={`mailto:${EMAIL}`}
-              className="flex items-center gap-1.5 hover:text-white transition-colors"
+              className="flex items-center gap-1.5 hover:text-foreground transition-colors"
             >
               <Mail className="w-4 h-4" />
               {EMAIL}
